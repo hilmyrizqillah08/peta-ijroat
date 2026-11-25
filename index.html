@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Peta Misi Ijroat</title>
+<meta name="description" content="Peta misi pribadi untuk 8 langkah ijroat mahasiswa baru Syariah Al-Azhar Cairo: peta asli, GPS, rute jalan kaki, syarat berkas, foto dan catatan per pos.">
+<meta name="theme-color" content="#0C0919">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div id="map" aria-label="Peta ijroat"></div>
+  <div class="hud" aria-live="polite">
+    <div class="hud-tag">MISI · IJROAT TINGKAT 1</div>
+    <div class="hud-obj" id="obj"></div>
+    <div class="hud-meta"><div class="bar"><span id="bar"></span></div><span id="prog">0/8</span><span class="dist" id="dist"></span></div>
+  </div>
+  <div class="fab">
+    <button class="btn" id="gpsBtn" type="button">Lacak lokasiku</button>
+    <button class="btn" id="fitBtn" type="button">Lihat semua pos</button>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+
+  <aside class="panel" id="panel">
+    <button class="grab" id="grab" type="button" aria-expanded="false">Geser atau ketuk untuk detail</button>
+    <nav class="chips" id="chips" aria-label="Langkah ijroat"></nav>
+    <article class="card" id="card"></article>
+    <section class="pos" id="pos" aria-label="Pos lokasi"></section>
+    <div class="foot">
+      <div class="row">
+        <button class="btn" id="exportBtn" type="button">Cadangkan progres</button>
+        <label class="btn" for="importInput" style="cursor:pointer">Pulihkan cadangan</label>
+        <input class="sr" type="file" id="importInput" accept="application/json">
+      </div>
+      <span>Langkah dari carousel edukasi SEMA FSI Al-Azhar Cairo. Jam buka bisa berubah tiap tahun, cek lagi ke senior atau Syuun.</span>
+      <span>Semua data (progres, catatan, foto) cuma tersimpan di HP ini. Peta © OpenStreetMap contributors © CARTO. Rute: FOSSGIS / OSRM.</span>
+    </div>
+  </aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
