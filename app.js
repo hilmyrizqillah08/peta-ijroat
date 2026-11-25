@@ -78,9 +78,10 @@ function shrink(file){return new Promise(function(res){var img=new Image(),u=URL
 
 /* ---------- map ---------- */
 var map=L.map("map",{zoomControl:true,attributionControl:true}).setView([FAC.lat,FAC.lng],17);
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{
-  maxZoom:20,subdomains:"abcd",
-  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
+/* Tile standar OpenStreetMap (tanpa API key), digelapkan lewat CSS filter di style.css */
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{
+  maxZoom:19,
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
 }).addTo(map);
 map.zoomControl.setPosition("topright");
 function zoomCls(){map.getContainer().classList.toggle("z-low",map.getZoom()<18);}
