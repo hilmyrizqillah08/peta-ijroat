@@ -4,7 +4,7 @@ Peta misi pribadi untuk 8 langkah ijroat mahasiswa baru Syariah Banin tingkat 1,
 
 ## Fitur
 
-- Peta asli OpenStreetMap (tile gelap CARTO) yang diwarnai ungu-magenta
+- Peta asli OpenStreetMap (tile standar, digelapkan lewat CSS filter, tanpa API key)
 - Lacak lokasi GPS dan rute jalan kaki asli ke pos berikutnya (FOSSGIS OSRM), lengkap dengan jarak dan perkiraan menit
 - Tombol "Navigasi di Google Maps" untuk navigasi belokan demi belokan
 - Pos bisa dikunci ke lokasi asli: pakai GPS, geser pin, atau cari tempat di OpenStreetMap
@@ -26,7 +26,7 @@ Semua data tersimpan di HP sendiri: progres dan catatan di `localStorage`, foto 
 
 - Langkah ijroat: carousel edukasi SEMA FSI Al-Azhar Cairo. Jam buka bisa berubah, cek lagi ke senior atau Syuun.
 - Koordinat awal: OpenStreetMap ("Faculty Of Shariah And Law Cairo" dan "Faculty Of Medicine", Nasr City). Posisi loket di dalam fakultas masih perkiraan.
-- Peta © OpenStreetMap contributors © CARTO. Rute: routing.openstreetmap.de (FOSSGIS).
+- Peta © OpenStreetMap contributors. Rute: routing.openstreetmap.de (FOSSGIS).
 
 ## Menjalankan
 
