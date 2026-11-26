@@ -20,7 +20,7 @@
   <div class="hud" aria-live="polite">
     <div class="hud-tag">MISI · IJROAT TINGKAT 1</div>
     <div class="hud-obj" id="obj"></div>
-    <div class="hud-meta"><div class="bar"><span id="bar"></span></div><span id="prog">0/8</span><span class="dist" id="dist"></span></div>
+    <div class="hud-meta"><div class="bar"><span id="bar"></span></div><span id="prog">0/8</span><span class="dist" id="dist"></span><span id="offline" hidden style="background:var(--orange);color:var(--night);font-weight:700;padding:1px 9px;border-radius:999px;text-shadow:none">Offline · rute garis lurus</span></div>
   </div>
   <div class="fab">
     <button class="btn" id="gpsBtn" type="button">Lacak lokasiku</button>
@@ -40,6 +40,7 @@
         <input class="sr" type="file" id="importInput" accept="application/json">
       </div>
       <span>Langkah dari carousel edukasi SEMA FSI Al-Azhar Cairo. Jam buka bisa berubah tiap tahun, cek lagi ke senior atau Syuun.</span>
+      <span>Mode offline: halaman dan peta yang pernah kamu buka tersimpan di HP. Sebelum ke kampus, buka peta saat ada sinyal lalu geser dan zoom di area yang mau dilewati. Rute jalan dan pencarian tetap butuh internet.</span>
       <span>Semua data (progres, catatan, foto) cuma tersimpan di HP ini. Peta © OpenStreetMap contributors. Rute: FOSSGIS / OSRM.</span>
     </div>
   </aside>
@@ -47,5 +48,14 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="app.js"></script>
+<script>
+(function(){
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); });
+  }
+  function net(){ var b=document.getElementById("offline"); if(b) b.hidden=navigator.onLine; }
+  window.addEventListener("online", net); window.addEventListener("offline", net); net();
+})();
+</script>
 </body>
 </html>

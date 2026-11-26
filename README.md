@@ -10,6 +10,7 @@ Peta misi pribadi untuk 8 langkah ijroat mahasiswa baru Syariah Banin tingkat 1,
 - Pos bisa dikunci ke lokasi asli: pakai GPS, geser pin, atau cari tempat di OpenStreetMap
 - Checklist 8 langkah dan syarat berkas, foto tiap pos, dan catatan
 - Cadangkan dan pulihkan progres sebagai file JSON (tanpa foto)
+- Mode offline: halaman, Leaflet, dan tile yang pernah dilihat disimpan oleh service worker (`sw.js`), maksimal 1500 tile, tanpa unduh massal
 
 ## Struktur
 
@@ -17,6 +18,7 @@ Peta misi pribadi untuk 8 langkah ijroat mahasiswa baru Syariah Banin tingkat 1,
 - `style.css` tampilan (token warna di `:root`)
 - `app.js` data langkah, peta, GPS, rute, penyimpanan
 - `manifest.webmanifest` dan `icon.svg` supaya bisa dipasang di layar utama HP
+- `sw.js` service worker untuk mode offline. Naikkan `VERSION` kalau mengubah daftar file cadangan
 
 ## Data
 
